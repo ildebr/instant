@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instant</title>
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,600;1,700&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,500;1,700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,100;1,200;1,300;1,400&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/libphonenumber-js@1.9.6/bundle/libphonenumber-max.js"></script>
+</head>
+<body>
+    <nav class="logo">
+        <div class="content">
+            <img src="img/logo.png" alt="logo" class="logo-img">
+        </div>
+    </nav>
+    <header class="site-header">
+        <div class="content">
+            <div class="questionaire" id="test">
+                <div class="progress">
+                    <div class="progress_bar"></div>
+                </div>
+                <div class="question question1 active" data-question-number="1">
+                    <h3>1. Who Do You Owe Tax Debt To?</h3>
+
+                    <div class="options">
+                        <div class="options_el" id="IRS" data-option-question-number="1" data-option-value="IRS">
+                            <img src="img/icon-irs-1591388980996.png" alt="question svg">
+
+                            <p>IRS</p>
+                        </div>
+                        <div class="options_el" id="state" data-option-question-number="1" data-option-value="state">
+                            <img src="img/icon-state-1591389067945.png" alt="question svg">
+
+                            <p>State</p>
+                        </div>
+                        <div class="options_el" id="both" data-option-question-number="1" data-option-value="both">
+                            <img src="img/icon-both-1591389087358.png" alt="question svg">
+
+                            <p>Both</p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <button class="button-continue" data-question-button="1">Continue →</button>
+                    </div>
+                </div>
+                <div class="question question2" data-question-number="2">
+                    <h3>2. About How Much Do You Owe?</h3>
+
+                    <div class="options">
+                        <div class="options_el" id="Over $50,000" data-option-question-number="2" data-option-value="Over $50,000">
+                            <img src="img/icon-owe-4-1591389223937.png" alt="question svg">
+
+                            <p>Over $50,000</p>
+                        </div>
+                        <div class="options_el" id="$25,000-$50,000" data-option-question-number="2" data-option-value="$25,000-$50,000">
+                            <img src="img/icon-owe-3-1591389204204.png" alt="question svg">
+
+                            <p>$25,000-$50,000</p>
+                        </div>
+                        <div class="options_el" id="$10,000 - $25,000" data-option-question-number="2" data-option-value="$10,000 - $25,000">
+                            <img src="img/icon-owe-2-1591389184512.png" alt="question svg">
+
+                            <p>$10,000 - $25,000</p>
+                        </div>
+                        <div class="options_el" id="Under $10,000" data-option-question-number="2" data-option-value="Under $10,000">
+                            <img src="img/icon-owe-1-1591389165253.png" alt="question svg">
+
+                            <p>Under $10,000</p>
+                        </div>
+                    </div>
+                    <div>
+                        <button class="back-button" data-option-question-number="2">
+                            &#8592;
+                        </button>
+                    </div>
+
+                    <div>
+                        <button class="button-continue" data-question-button="2">Continue →</button>
+                    </div>
+                </div>
+                <div class="question question3" data-question-number="3">
+                    <h3>3. Have You Received Threatening Letters or Notices from the IRS?</h3>
+
+                    <div class="options">
+                        <div class="options_el" id="Yes" data-option-question-number="3" data-option-value="Yes">
+                            <img src="img/icon-letters-1591391514691.png" alt="question svg">
+
+                            <p>Yes, and I Need Help!</p>
+                        </div>
+                        <div class="options_el" id="No" data-option-question-number="3" data-option-value="No">
+                            <img src="img/icon-no-1591391258339.png" alt="question svg">
+
+                            <p>No...</p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <button class="back-button" data-option-question-number="3">
+                            &#8592;
+                        </button>
+                    </div>
+
+                    <div>
+                        <button class="button-continue" data-question-button="3">Continue →</button>
+                    </div>
+                </div>
+
+                <div class="question question4" data-question-number="4">
+                    <h3>Great, What Is Your Name?</h3>
+
+                    <div class="options">
+                        <div class="input_el">
+                            <input type="text" name="firstname" placeholder="First Name" class="input_el_field" id="text_input_name">
+                        </div>
+                        <div class="input_el">
+                            <input type="text" name="lastname" placeholder="Last Name" class="input_el_field" id="text_input_name">
+                        </div>
+                    </div>
+
+                    <div>
+                        <button class="back-button" data-option-question-number="4">
+                            &#8592;
+                        </button>
+                    </div>
+
+                    <div>
+                        <button class="button-continue visible" id="name-button" data-question-button="4">Continue →</button>
+                    </div>
+                </div>
+
+                <div class="question question4" data-question-number="5">
+                    <h3>Great, What Is Your Email?</h3>
+
+                    <div class="options">
+                        <div class="input_el">
+                            <input type="email" name="email" placeholder="Email" class="input_el_field" id="email_input">
+                        </div>
+                    </div>
+
+                    <div>
+                        <button class="back-button" data-option-question-number="5">
+                            &#8592;
+                        </button>
+                    </div>
+
+                    <div>
+                        <button class="button-continue visible" id="email-button" data-question-button="5">Continue →</button>
+                    </div>
+                </div>
+
+                <div class="question question5" data-question-number="6">
+                    <h3>And Last, What Is Your Phone Number?</h3>
+
+                    <div class="options">
+                        <div class="input_el">
+                            <input type="text" name="phone" placeholder="(___) ___-____" class="input_el_field" id="phone_input">
+                        </div>
+                    </div>
+
+                    <div>
+                        <button class="back-button" data-option-question-number="6">
+                            &#8592;
+                        </button>
+                    </div>
+
+                    <div>
+                        <button class="button-continue visible" id="phone-button" data-question-button="6">Submit →</button>
+                    </div>
+                </div>
+                
+            </div>
+
+            <div class="site-header--text">
+                <p class="sub"><strong>Are You the 1-in-3 Who Will You Qualify to:</strong></p>
+                <h1 class="site-title">Legally Avoid Paying <span>up to 97%</span> of Your Back Tax Debt?</h1>
+
+                <ul>
+                    <li><p>BBB A+ Rated Tax Law Firm, with 100% US-Based Pros</p></li>
+                    <li><p>Average Client Savings of 41% <strong>(1-in-3 save over 97%)</strong></p></li>
+                    <li><p>Free 14 Day Trial Available (Limited Availability)</p></li>
+                </ul>
+
+                <div class="take-test">
+                    <span><img src="img/reshot-icon-bold-arrow-left-TS2DVUZ9WY.svg" alt=""></span>
+                    <p>Take the 59sec Tax Savings Calculator Now</p>
+                    <span><img src="img/reshot-icon-bold-arrow-left-TS2DVUZ9WY.svg" alt=""></span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="proof">
+        <div class="content">
+            <section class="proof__numbers">
+                <div class="proof__numbers1">
+                    <h2><span class="xl">$500,000,000</span><span class="sm">$500M</span></h2>
+                    <p>of Back Tax Debt Processed</p>
+                </div>
+
+                <div class="proof__numbers2">
+                    <h2><span class="xl">12,000+</span><span class="sm">12k</span></h2>
+                    <p>Americans Helped Since 2008</p>
+                </div>
+
+                <div class="proof__numbers3">
+                    <h2>41%</h2>
+                    <p>Average Savings on Tax Debt</p>
+                </div>
+            </section>
+        </div>
+    </section>
+
+    <section class="benefit">
+        <div class="content">
+            <div class="video__section">
+                <img src="img/1.1.3-ITA-Main-3-Sq-high.gif" alt="gif">
+            </div>
+
+            <div class="helper">
+                <a href="#test" class="cta">
+                    <span>Take 59sec calculator</span> <span><img class="arrow" src="img/reshot-icon-arrow-right-QC8ZV9TSGD.svg" alt="right arrow"></span>
+                </a>
+            </div>
+            <div class="benefit__points">
+                <div class="benefit__points1">
+                    <img src="img/icon-employees-1.png" alt="employees">
+                    <div class="benefit__points__text">
+                        <h3>Average Client Savings of 41% (1-in-3 save over 97%)</h3>
+                    <p>Instantly save $10,000s on what the IRS says you owe. 1-in-3 client qualify for a special program that eliminates up to 97% of their tax debts.</p>
+                    </div>
+
+                </div>
+
+                <div class="benefit__points2">
+                    <img src="img/icon-calendar-2.png" alt="calendar">
+                    <div class="benefit__points__text">
+                        <h3>Free 14 Day Trial (Limited Availability)</h3>
+                    <p>See results before having to pay a penny. We have a limited number of free 14 day trials available each month – first come, first served.</p>
+                    </div>
+                </div>
+
+                <div class="benefit__points3">
+                    <img src="img/icon-money-in-hand.png" alt="money in hand">
+                    <div class="benefit__points__text">
+                        <h3>Reasonable Flat Fee with Payment Plans Available</h3>
+                    <p>We charge a reasonable fee, based on the complexity of your case, and will work with you on a payment plan you can afford.</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="our-people">
+        <div class="content">
+            <h3>100% US-Based Real People        </h3>
+            <p>We've Treated Our 12,000+ Clients Right, so We Don't Have to Hide Our Faces
+            (like other companies)</p>
+        </div>
+    </section>
+
+    <section class="how-we-help">
+        <div class="content">
+            <div class="hwp-element">
+                <div class="hwp-element-img">
+                    <img src="img/tax-debt-owed.jpg" alt="tax debt owed">
+                </div>
+                <div class="hwp-element-text">
+                    <h3>Ignoring Your Tax Debt is Costing You 2x More than You Need to Pay</h3>
+                    <p>The IRS loves to tack on additional penalties and interest charges the longer they don’t get paid. These constant additional charges can <strong>literally double the amount you actually owe!</strong></p>
+                    <p>By simply filing your back-returns, you can automatically reduce the amount owed by 25-40%.</p>
+                </div>
+            </div>
+
+            <div class="hwp-element">
+                <div class="hwp-element-img">
+                    <img src="img/irs-agents.jpg" alt="tax debt owed">
+                </div>
+                <div class="hwp-element-text">
+                    <h3>The IRS Is Hiring Another 87,000 Employees to Enforce Unpaid Debt</h3>
+                    <p>With the new Inflation Reduction Act, the IRS is committing to hiring an additional 87,000 new employees with the intent of collecting all tax debt owed as possible.</p>
+                    <p>It’s only a matter of time before they will start levying wage garnishments and bank levies to get they are owed.</p>
+                </div>
+            </div>
+
+            <div class="hwp-element">
+                <div class="hwp-element-img">
+                    <img src="img/negotiate-with-irs.jpg" alt="negotiate">
+                </div>
+                <div class="hwp-element-text">
+                    <h3>The IRS Is Willing to Negotiate the Earlier You Reach Out…</h3>
+                    <p>If they don’t have to spend money chasing you, the IRS is much more willing to negotiate the amount you owe down – big time.</p>
+                    <p>If you’re one of the 1-in-3 of our clients who qualify for a specific program, you can <span>legally have up to 97%</span> of your tax debt forgiven!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="how-it-works">
+        <div class="content">
+
+            <h2 class="how-it-works-heading">
+                How It Works:
+            </h2>
+
+            <div class="hiw-element">
+                <div class="hiw-element-counter">
+                    <div class="hiw-element-number">
+                        1
+                    </div>
+                </div>
+                <div class="hiw-element-text">
+                    <h3>Take the 59sec Tax Savings Calculator</h3>
+                    <p class="sub-title">
+                        <strong>59 Seconds</strong> – take our no-obligation tax savings calculator to find out:
+                    </p>
+
+                    <ul>
+                        <li>How much you can legally avoid paying</li>
+                        <li>Which IRS programs you qualify for</li>
+                        <li>Exactly what to do next</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="hiw-element">
+                <div class="hiw-element-counter">
+                    <div class="hiw-element-number">
+                        2
+                    </div>
+                </div>
+                <div class="hiw-element-text">
+                    <h3>Free Initial Consultation & Financial Analysis</h3>
+                    <p class="sub-title">
+                        <strong>About 15 Minutes </strong> – We will go through your entire financial situation, step-by-step and see what programs you qualify for, determine how we can help, and answer any questions that you may have.
+                    </p>
+                </div>
+            </div>
+
+            <div class="hiw-element">
+                <div class="hiw-element-counter">
+                    <div class="hiw-element-number">
+                        3
+                    </div>
+                </div>
+                <div class="hiw-element-text">
+                    <h3>Free 14 Day Trial of Unlimited Tax Relief Work</h3>
+                    <p class="sub-title">
+                        <strong>14 Days </strong> – We get to work right away, and put a 60 day IRS collections hold on your account, remove all wage garnishments and levies within 24 hours, and pull your tax transcripts from the IRS to find out what you ACTUALLY owe (so they can’t jerk you around).
+                    </p>
+                </div>
+            </div>
+
+            <div class="hiw-element">
+                <div class="hiw-element-counter">
+                    <div class="hiw-element-number">
+                        4
+                    </div>
+                </div>
+                <div class="hiw-element-text">
+                    <h3>(Optional) Fight the IRS to Reduce Your Tax Debt By 97%</h3>
+                    <p class="sub-title">
+                        <strong>1-4 Months </strong> – After the 14 days, if you’re satisfied with our work, we’ll continue fighting the IRS on your behalf for a one-time fee, agreed upon before any work starts. This process can take 1 week, or up to 4 months, depending on your individual situation. We will fight until your problems are cleared.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq">
+
+        <div class="content">
+
+            <h2>Frequently Asked Questions</h2>
+
+            <div class="faq__element">
+                <h4>Tax Relief</h4>
+
+                <div class="faq__element__container">
+                    <div class="faq__question">
+                        <div class="faq__question__header">
+                            <span class="plus">+</span>
+                            <p><strong>Will the IRS really forgive my tax debt?</strong></p>
+                        </div>
+                        <div class="faq__question__text">
+                            <p>Yes! It’s a common misconception that the IRS does not negotiate with people who owe back tax debt. It’s their job to collect what they can, and they’ll gladly take some instead of none. There are a few specific IRS programs that can have huge amounts of back tax debts forgiven, depending on your individual situation.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq__question">
+                        <div class="faq__question__header">
+                            <span class="plus">+</span>
+                            <p><strong>How much will I still have to pay?</strong></p>
+                        </div>
+                        <div class="faq__question__text">
+                            <p>That all depends on your specific circumstances. On average for our clients, we reduce the amount owed in back taxes by about 41% on average. But in some cases, up to 97% or more gets forgiven, leaving our client only having to pay 3% or less than what they originally owed. For many, that’s a savings of $100,000s, and they only are left having to pay $100s or $1,000s. We’ll need to know a lot more about your specific situation before giving a good estimate on how much you can actually save.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq__question">
+                        <div class="faq__question__header">
+                            <span class="plus">+</span>
+                            <p><strong>What happens if I don’t take care of this?</strong></p>
+                        </div>
+                        <div class="faq__question__text">
+                            <p>The longer you put off dealing with tax debts, the more penalties and interest charges the IRS adds on. By not filing multiple years, they actually submit substitute returns for you, but do not include any deductions or write-offs, so your tax bill is multiple times higher than what it should be. When that happens for a few years, plus they add on interest and penalty charges, you can literally be paying 2x to 4x more than you actually have to. The sooner the better for taking care of it.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq__element">
+                <h4>Our Company and Services</h4>
+
+                <div class="faq__element__container">
+                    <div class="faq__question">
+                        <div class="faq__question__header">
+                            <span class="plus">+</span>
+                            <p><strong>Are you a scam?</strong></p>
+                        </div>
+                        <div class="faq__question__text">
+                            <p>Yes! It’s a common misconception that the IRS does not negotiate with people who owe back tax debt. It’s their job to collect what they can, and they’ll gladly take some instead of none. There are a few specific IRS programs that can have huge amounts of back tax debts forgiven, depending on your individual situation.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq__question">
+                        <div class="faq__question__header">
+                            <span class="plus">+</span>
+                            <p><strong>How much will I still have to pay?</strong></p>
+                        </div>
+                        <div class="faq__question__text">
+                            <p>That all depends on your specific circumstances. On average for our clients, we reduce the amount owed in back taxes by about 41% on average. But in some cases, up to 97% or more gets forgiven, leaving our client only having to pay 3% or less than what they originally owed. For many, that’s a savings of $100,000s, and they only are left having to pay $100s or $1,000s. We’ll need to know a lot more about your specific situation before giving a good estimate on how much you can actually save.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq__question">
+                        <div class="faq__question__header">
+                            <span class="plus">+</span>
+                            <p><strong>What happens if I don’t take care of this?</strong></p>
+                        </div>
+                        <div class="faq__question__text">
+                            <p>The longer you put off dealing with tax debts, the more penalties and interest charges the IRS adds on. By not filing multiple years, they actually submit substitute returns for you, but do not include any deductions or write-offs, so your tax bill is multiple times higher than what it should be. When that happens for a few years, plus they add on interest and penalty charges, you can literally be paying 2x to 4x more than you actually have to. The sooner the better for taking care of it.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="content">
+            <img src="img/logo.png" class="logo-img" alt="logo" class="logo">
+
+            <div class="policy">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms and Conditions</a>
+            </div>
+        </div>
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script type='text/javascript' src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.5/jquery.inputmask.min.js"></script>
+    <script src="js/js.js"></script>
+</body>
+</html>
